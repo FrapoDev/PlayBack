@@ -23,21 +23,12 @@ public class Audio {
     public int getTotalLikes() {
         return totalLikes;
     }
-    public int likes(){
+    public int like(){
         return totalLikes++;
     }
 
     public double getClassification() {
         return classification;
     }
-    public void setClassification(double classification) {
-        this.classification = classification;
-    }
 
-    public void printAudio(){
-        System.out.println("\nTitle : "+ getTitle());
-        System.out.println("Total Reproductions: "+ getTotalReproduction());
-        System.out.println("Total likes: "+ getTotalLikes());
-
-    }
 }

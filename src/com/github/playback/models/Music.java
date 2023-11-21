@@ -1,4 +1,4 @@
-package com.github.playback.subclass;
+package com.github.playback.models;
 import com.github.playback.models.Audio;
 
 public class Music extends Audio {
@@ -46,5 +46,14 @@ public class Music extends Audio {
         System.out.println("Album: "+getAlbum());
         System.out.println("Music Time: "+getMusicTime() +" minutes");
         System.out.println("Music Genre: "+getMusicGenre());
+    }
+
+    @Override
+    public double getClassification() {
+        if ( getTotalReproduction() >= 2000 ){
+            return 10;
+        } else {
+            return 7;
+        }
     }
 }

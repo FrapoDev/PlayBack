@@ -1,4 +1,4 @@
-package com.github.playback.subclass;
+package com.github.playback.models;
 
 import com.github.playback.models.Audio;
 
@@ -36,6 +36,15 @@ public class Podcast extends Audio{
         System.out.println("Total likes: "+ getTotalLikes());
         System.out.println("Podcast Host: "+getHost());
         System.out.println("Podcast description: "+getDescription());
-        System.out.println("Total Podcast time: "+getTotalTime());
+        System.out.println("Total Podcast time: "+getTotalTime()+" hours");
+    }
+
+    @Override
+    public double getClassification() {
+        if ( getTotalLikes() >= 1000 ){
+            return 10;
+        } else {
+            return 7;
+        }
     }
 }
