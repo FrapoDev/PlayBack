@@ -1,10 +1,10 @@
-package com.github.playback.main;
+package com.github.playback;
 
 import com.github.playback.models.Music;
 import com.github.playback.models.MyFavorite;
 import com.github.playback.models.Podcast;
 
-public class Main {
+public class PlaybackApplication {
     public static void main(String[] args) {
 
         Music music1 = new Music();
