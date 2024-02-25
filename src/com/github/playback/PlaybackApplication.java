@@ -1,11 +1,18 @@
 package com.github.playback;
 
+import com.github.playback.dao.AudioDAO;
+import com.github.playback.dbUtil.JPAUtil;
+import com.github.playback.models.Audio;
 import com.github.playback.models.Music;
 import com.github.playback.models.MyFavorite;
 import com.github.playback.models.Podcast;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
 
 public class PlaybackApplication {
     public static void main(String[] args) {
+        Audio audio = new Audio();
 
         Music music1 = new Music();
         music1.setTitle("Space Cadet (feat. Gunna)");
