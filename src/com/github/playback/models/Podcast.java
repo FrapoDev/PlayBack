@@ -1,34 +1,27 @@
 package com.github.playback.models;
 
 import com.github.playback.models.Audio;
+import jakarta.persistence.*;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-
+@Entity
+@Getter
+@Setter
+@NoArgsConstructor
 public class Podcast extends Audio{
+    @Id
+    @EqualsAndHashCode.Include
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @ManyToOne
+    @JoinColumn(name = "audio_id")
+    private Audio audio;
     private String host;
     private String description;
     private int totalTime;
-
-    public String getHost() {
-        return host;
-    }
-    public void setHost(String host) {
-        this.host = host;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public int getTotalTime() {
-        return totalTime;
-    }
-
-    public void setTotalTime(int totalTime) {
-        this.totalTime = totalTime;
-    }
 
     public void printPodcast(){
         System.out.println("\nTitle : "+ getTitle());
