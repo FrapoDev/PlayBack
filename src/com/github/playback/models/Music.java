@@ -6,15 +6,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity
+@Entity(name = "Music")
 @Getter
 @Setter
 @NoArgsConstructor
 public class Music extends Audio {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @EqualsAndHashCode.Include
-    private Long id;
     @ManyToOne
     @JoinColumn(name = "audio_id")
     private Audio audio;
@@ -22,6 +18,14 @@ public class Music extends Audio {
     private String album;
     private double musicTime;
     private String musicGenre;
+
+    public Music(Audio audio, String author, String album, double musicTime, String musicGenre) {
+        this.audio = audio;
+        this.author = author;
+        this.album = album;
+        this.musicTime = musicTime;
+        this.musicGenre = musicGenre;
+    }
 
     public void printMusic(){
         System.out.println("\nTitle : "+ getTitle());

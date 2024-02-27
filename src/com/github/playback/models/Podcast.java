@@ -7,15 +7,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity
+@Entity(name = "Podcast")
 @Getter
 @Setter
 @NoArgsConstructor
 public class Podcast extends Audio{
-    @Id
-    @EqualsAndHashCode.Include
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
     @ManyToOne
     @JoinColumn(name = "audio_id")
     private Audio audio;
